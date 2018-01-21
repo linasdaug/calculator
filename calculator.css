@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    height: 100vh;
+    width: 80%;
+}
+
+table {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+td, tr, thead {
+    border: collapse;
+    border: 2px solid grey;
+}
+
+td {
+    width: 80px;
+}
+
+button {
+    width: 100%;
+}
+
+thead td {
+    background-color: black;
+}
+
+thead td p {
+    color: white;
+    font-family: "Electrolize";
+    text-align: right;
+}
+
+#memorized {
+    font-size: 14px;
+}
+
+#displayed {
+    font-size: 20px;
+}
