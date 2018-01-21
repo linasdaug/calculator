@@ -1,6 +1,3 @@
-
-
-
     let num = 0;
     let mem = 0;
     let input = "";
@@ -15,12 +12,10 @@
             input += x;
             num = parseFloat(input);
             }
-
         if (timeToReset) {
             num = parseFloat(x);
             timeToReset = false;
         };
-
         display.innerHTML = num;
     };
 
@@ -29,7 +24,7 @@
             input += '.';
         }
         floats = true;
-    }
+    };
 
     function reset() {
         display.innerHTML = "0";
@@ -100,8 +95,8 @@
         num = 0;
         input = "";
         action = ":";
-        display.innerHTML = num + "";
-        memorized.innerHTML = mem + " " + action;
+        display.innerHTML = sliced(num + "");
+        memorized.innerHTML = sliced(mem + " ") + action;
         floats = false;
     };
 
@@ -111,8 +106,8 @@
             num = mem;
             mem = 0;
             action = "";
-            display.innerHTML = num + "";
-            memorized.innerHTML = mem + " ";
+            display.innerHTML = sliced(num + "");
+            memorized.innerHTML = sliced(mem + " ");
             timeToReset = true;
             floats = false;
         }
@@ -136,12 +131,13 @@
             break;
         };
 
-        display.innerHTML = num + "";
-        memorized.innerHTML = (mem + " " + action + " " + perc + "%");
+        display.innerHTML = sliced(num + "");
+        memorized.innerHTML = sliced(mem + " " + action + " " + perc + "%");
         action = "";
         floats = false;
-
-    }
+        input="";
+        mem = 0;
+    };
 
     function endPrevious() {
         switch (action) {
@@ -170,8 +166,17 @@
                 mem /= num;
                 num = 0;
                 input = "";
-                display.innerHTML = num + "";
-                memorized.innerHTML = mem + " " + action;
+                display.innerHTML = sliced(num + "");
+                memorized.innerHTML = sliced(mem + " " + action);
             break;
         }
-    }
+    };
+
+    function sliced(a) {
+        if (a.indexOf(".") && a.indexOf("0000")) {
+            if (a.indexOf(".") < a.indexOf("0000")) {
+                a = a.slice(0, a.indexOf("0000"))
+            };
+        };
+        return a;
+    };
