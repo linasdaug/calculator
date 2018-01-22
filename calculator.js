@@ -6,6 +6,77 @@
     let action = "";
     let timeToReset = false;
     let floats = false;
+    let key = 0;
+
+    document.addEventListener("keydown", function(event) {
+        key = event.which;
+        switch (key) {
+            case 49:
+                inputNum(1);
+                break;
+            case 50:
+                inputNum(2);
+                break;
+            case 51:
+                inputNum(3);
+                break;
+            case 52:
+                inputNum(4);
+                break;
+            case 53:
+                inputNum(5);
+                break;
+            case 54:
+                inputNum(6);
+                break;
+            case 55:
+                inputNum(7);
+                break;
+            case 56:
+                inputNum(8);
+                break;
+            case 57:
+                inputNum(9);
+                break;
+            case 48:
+                inputNum(0);
+                break;
+            case 27:
+                resetCurrent();
+                break;
+            case 13:
+                equal();
+                break;
+            case 61:
+                equal();
+                break;
+            case 191:
+                divide();
+                break;
+            case 110:
+                floated();
+                break;
+            case 107:
+                plus();
+                break;
+            case 111:
+                divide();
+                break;
+            case 106:
+                multiply();
+                break;
+            case 109:
+                minus();
+                break;
+            case 188:
+                floated();
+                break;
+            case 190:
+                floated();
+                break;
+            };
+    });
+
 
     function inputNum(x) {
         if (num < 1000000000000 && input.length < 22) {
