@@ -8,7 +8,7 @@
     let floats = false;
 
     function inputNum(x) {
-        if (input.length < 12) {
+        if (num < 1000000000000 && input.length < 22) {
             input += x;
             num = parseFloat(input);
             }
@@ -101,8 +101,16 @@
     };
 
     function equal() {
+
         if (action != "") {
             endPrevious();
+            if (mem == Infinity) {
+                display.innerHTML = "Cannot divide by zero";
+                memorized.innerHTML = ":0";
+                action = "";
+                num = 0;
+                mem = 0;
+            } else {
             num = mem;
             mem = 0;
             action = "";
@@ -110,6 +118,7 @@
             memorized.innerHTML = sliced(mem + " ");
             timeToReset = true;
             floats = false;
+            };
         }
 
     }

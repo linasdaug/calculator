@@ -21,11 +21,12 @@ td, tr, thead {
 }
 
 td {
-    width: 80px;
+    width: 90px;
 }
 
 button {
     width: 100%;
+    padding: 3px;
 }
 
 thead td {
