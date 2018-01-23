@@ -11,6 +11,9 @@
     document.addEventListener("keydown", function(event) {
         key = event.which;
         switch (key) {
+            case 8:
+                resetCurrent();
+                break;
             case 49:
                 inputNum(1);
                 break;
@@ -42,7 +45,7 @@
                 inputNum(0);
                 break;
             case 27:
-                resetCurrent();
+                reset();
                 break;
             case 13:
                 equal();
@@ -72,6 +75,51 @@
                 floated();
                 break;
             case 190:
+                floated();
+                break;
+            case 97:
+                inputNum(1);
+                break;
+            case 98:
+                inputNum(2);
+                break;
+            case 99:
+                inputNum(3);
+                break;
+            case 100:
+                inputNum(4);
+                break;
+            case 101:
+                inputNum(5);
+                break;
+            case 102:
+                inputNum(6);
+                break;
+            case 103:
+                inputNum(7);
+                break;
+            case 104:
+                inputNum(8);
+                break;
+            case 105:
+                inputNum(9);
+                break;
+            case 96:
+                inputNum(0);
+                break;
+            case 111:
+                divide();
+                break;
+            case 106:
+                multiply();
+                break;
+            case 109:
+                minus();
+                break;
+            case 107:
+                plus();
+                break;
+            case 110:
                 floated();
                 break;
             };
